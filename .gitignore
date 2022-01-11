@@ -1,0 +1,13 @@
+db/
+tmp/
+coverage/
+
+
+
+.byebug_history
+*.gem
+
+
+.DS_Store
+.idea/
+.rvmrc

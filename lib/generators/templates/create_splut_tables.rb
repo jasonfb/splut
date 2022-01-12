@@ -13,9 +13,9 @@ class CreateSplutTables < ActiveRecord::Migration<%= migration_version %>
         t.string :name
         t.string :letter_designation
         t.integer :_impression_total, default: 0, null: false
-        t.integer :_segmentation_total, default: 0, null: false
+        t.integer :_segment_total, default: 0, null: false
         t.integer :_impression_success, default: 0, null: false
-        t.integer :_segmentation_success, default: 0, null: false
+        t.integer :_segment_success, default: 0, null: false
 
         t.timestamps
       end

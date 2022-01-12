@@ -24,22 +24,22 @@ This is the basic design of Splut. Splut creates the four tables shown in rectag
 
 First, define your Experiments & Variations. Both have simple labels for 'name'.
 
-Variations have automatic `letter_designation` field which is set automatically and can't be changed. The first one you make is 'A', the next one you make is 'B', etc. I guess you could make up to 26 letters of the alphabet but don't do that. 
+Variations have automatic `letter_designation` field which is set automatically and can't be changed. The first one you make is 'A', the next one you make is 'B', etc. I guess you could make up to 26 letters of the alphabet but don't do that.  #TODO: IMPLEMENT ME
 
-# TODO: IMPLEMENT ME
+Next, you need a 'key' — a unique string to identify this experiment. # TODO: add base_key to Experiments
 
-Next, your code needs a 'key' — a unique string to identy
-
-Here, Splut will solve part of your problem, expecting you to bring to the table any of:
+Then, Splut will need you to pass it any of:
 
 1) A logged-in user
 2) A session
 3) A visit
 4) anything that be attached to a Rails model using polymorphism
 
-Based on any of these three (your choice), you can give Splut this contextual object + Experiment, and Splut will handle putting (and keeping them in) the correcti
+Based on any of these four, you can give Splut this contextual object + Experiment, and Splut will handle putting (and keeping them in) the correcti
+
 If you have no logged-in user, you can't use choice #1.
-To define a visit, you can piggyback off of my other gem Universal Track Manager:
+
+To define a visit, you can piggyback off of my other gem Universal Track Manager
 https://github.com/jasonfb/universal_track_manager/
 
 Otherwise, you're on your own for how you want to define the context of the visitor/customer/user.

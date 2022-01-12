@@ -7,6 +7,20 @@ The data aggregation, on the other hand, is a little complicated and involves so
 
 Then, interpreting the data is mathy. 
 
+
+# Install
+
+rails generate splut:install
+
+
+# Experiments, Variations, Impressinos, and SegementParticipants
+
+This is the basic design of Splut. Splut creates the four tables shown in rectagles. The spluttable thing belongs to both Impression and SegementParticipant as **polymorphic**, but you will pass it into the experiment object. 
+
+![Splut ERD-2022-01-11](https://user-images.githubusercontent.com/59002/149049308-8bf00ff8-498b-4f74-9240-7520ea1569d5.jpg)
+
+
+
 First, define you Experiments & Variations. Both have simple labels for 'name'. Variations have automatic `letter_designation` field which is set automatically and can't be changed.
 
 Next, your code needs a 'key' — a unique string to identy
@@ -56,7 +70,3 @@ Alternatively, you can implement additional parameters passed into the service o
 There are of course several other ways to implement this and no service class is necessary. 
 
 Then, you'll use the result from `get_image` (or any other kind of variated result you can think of) to render out a result.
-
-# Install
-
-rails generate splut:install

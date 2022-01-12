@@ -97,9 +97,9 @@ If you call it on a SegmentParticipant, _the last_ Impression for that object wi
 The Variation keeps track of four key metrics, using the magical **counter_culture gem**:
 
 • _impression_total
-• _segmentation_total
+• _segment_total
 • _impression_success
-• _segmentation_success
+• _segment_success
 
 Be sure to see the counter culture docs for some under the hood details:
 

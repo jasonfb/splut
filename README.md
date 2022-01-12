@@ -22,7 +22,11 @@ This is the basic design of Splut. Splut creates the four tables shown in rectag
 
 # Who Am I
 
-First, define your Experiments & Variations. Both have simple labels for 'name'. Variations have automatic `letter_designation` field which is set automatically and can't be changed. # TODO: IMPLEMENT ME
+First, define your Experiments & Variations. Both have simple labels for 'name'.
+
+Variations have automatic `letter_designation` field which is set automatically and can't be changed. The first one you make is 'A', the next one you make is 'B', etc. I guess you could make up to 26 letters of the alphabet but don't do that. 
+
+# TODO: IMPLEMENT ME
 
 Next, your code needs a 'key' — a unique string to identy
 

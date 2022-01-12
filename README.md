@@ -84,15 +84,17 @@ Then, you'll use the result from `get_image` (or any other kind of variated resu
 # Success!
 
 You have two choices:
-1) You can call success! on the Impression
-2) You can call success! on the SegmentParticipant object
+1) You can call `success!` on the Impression
+2) You can call `success!` on the SegmentParticipant object
 
-Either way, both objects will be set to success. However, if you call it on the SegmentParticipant, on ly the last Impression will be set to success. 
+If you call it on an Impression, the single (belongs_to) related SegmentParticipant will ALSO be set to success.
 
-(Since Impression belongs to SegmentParticipant, there is only one to set to successful.)
+If you call it on a SegmentParticipant, _the last_ Impression for that object will be ALSO be set to success
 
 
-Either way, the Variation keeps track of four key metrics, using the magical **counter_culture gem**:
+# Track
+
+The Variation keeps track of four key metrics, using the magical **counter_culture gem**:
 
 • _impression_total
 • _segmentation_total

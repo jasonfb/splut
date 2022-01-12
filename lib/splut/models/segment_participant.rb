@@ -2,7 +2,7 @@
 require 'counter_culture'
 
 module Splut
-  class SegementParticipant < ActiveRecord::Base
+  class SegmentParticipant < ActiveRecord::Base
     self.table_name = "segment_participants"
 
     belongs_to :variation

@@ -12,14 +12,33 @@ module Splut
       # but will not segement them
     end
 
-    def retrieve_group!(splutable_thing)
+    def participate!(splutable_thing)
       # will return the segment participant if the
       # thing is already in the experiment
       #
       #
       # will put the participant into the experiment if not
+      #
+      segment_participant = Splut::SegmentParticipant.find_by(
+        variation_id: self.variations.collect(&:id),
+        splutable: splutable_thing)
+
+      if !segment_participant
+        random = rand(self.variations.count).floor
+
+        this_variation = self.variations[random]
+
+        puts "Putting #{splutable_thing} into variation #{this_variation}"
+        segment_participant = this_variation.segment_participants.create!(splutable: splutable_thing)
+
+      else
+        puts " #{splutable_thing} was already in variation #{this_variation}"
+      end
+
+      impression = this_variation.impressions.create!(splutable: splutable_thing,
+                                                      segment_participant: segment_participant)
+
+      impression
     end
-
-
   end
 end

@@ -33,6 +33,7 @@ module Splut
 
       else
         puts " #{splutable_thing} was already in variation #{this_variation}"
+        this_variation = segment_participant.variation
       end
 
       impression = this_variation.impressions.create!(splutable: splutable_thing,

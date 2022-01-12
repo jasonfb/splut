@@ -7,6 +7,7 @@ The data aggregation, on the other hand, is a little complicated and involves so
 
 Then, interpreting the data is mathy. 
 
+This gem is like a poor-man's A/B testing tool that keeps control in your Rails app, is happy to aggregate, and does a bit of the mathy stuff for you.
 
 # Install
 

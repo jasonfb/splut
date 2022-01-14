@@ -7,16 +7,15 @@ module Splut
 
     belongs_to :variation
     belongs_to :splutable, polymorphic: true
+    has_many :impressions
 
     counter_culture :variation,  column_name: :_segment_total
     counter_culture :variation,  column_name: proc {|model| model.success  ? '_segment_success' : nil }
 
     def success!
-      # since we don't know the impression, just guess
-      # that the last impression was the successful one
-      #
-      #
-      # set this + the last impression to successful
+
+      self.update(success: true, success_at: DateTime.current)
+      self.impressions.last.update(success: true, success_at: DateTime.current)
     end
   end
 end

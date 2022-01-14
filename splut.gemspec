@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
                     "homepage_uri" => 'https://github.com/jasonfb/splut'}
 
 
-  s.add_dependency('rails', '> 5.1')
+  # s.add_dependency('rails', '> 5.1')
   s.add_runtime_dependency('counter_culture')
 
   s.add_development_dependency('simplecov')

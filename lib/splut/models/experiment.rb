@@ -8,11 +8,16 @@ module Splut
 
 
     def is_in_group?(splutable_thing)
-      # only checks to see if they are already segemented
-      # but will not segement them
+      existing_segment_participant = SegmentParticipant.find_by(variation_id: self.variations.collect(&:id),
+                                                                splutable: splutable_thing)
+
     end
 
     def participate!(splutable_thing)
+
+      if self.variations.none?
+        raise "participate! was called on experiment #{self.name} (id #{self.id} but there are no variations)"
+      end
       # will return the segment participant if the
       # thing is already in the experiment
       #
@@ -29,6 +34,7 @@ module Splut
         this_variation = self.variations[random]
 
         puts "Putting #{splutable_thing} into variation #{this_variation}"
+
         segment_participant = this_variation.segment_participants.create!(splutable: splutable_thing)
 
       else

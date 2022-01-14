@@ -1,5 +1,5 @@
 
-# A/B Test For Simple People
+# A/B Testing Made Easy
 
 A/B testing has a unique technical flaw and strength: by design, the experience needs to be tightly coupled with your application.
 

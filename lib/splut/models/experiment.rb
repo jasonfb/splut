@@ -33,7 +33,6 @@ module Splut
 
         this_variation = self.variations[random]
 
-        puts "Putting #{splutable_thing} into variation #{this_variation}"
 
         segment_participant = this_variation.segment_participants.create!(splutable: splutable_thing)
 
